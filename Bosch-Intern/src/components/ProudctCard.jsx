@@ -19,9 +19,9 @@ function ProudctCard(props) {
       <p>{props.proizvod.kratakOpis}</p>
       <h3>{props.proizvod.cena}</h3>
       <button>Add to cart</button>
-      <button onClick={handlePlusClick}>+</button>
-      <span>{brProizvoda}</span>
       <button onClick={handleMinusClick}>-</button>
+      <span>{brProizvoda}</span>
+      <button onClick={handlePlusClick}>+</button>
     </div>
   );
 }

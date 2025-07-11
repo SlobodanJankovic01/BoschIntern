@@ -1,4 +1,5 @@
 import React from "react";
+import ProudctCard from "../components/ProudctCard";
 
 function Home() {
   let proizvod = {
