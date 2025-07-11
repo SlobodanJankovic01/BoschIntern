@@ -1,17 +1,22 @@
-import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import ProudctCard from "../components/ProudctCard";
+import productsData from "../assets/products.json";
 
 function Home() {
-  let proizvod = {
-    naziv: "Busilica",
-    slika: "https://example.com/busilica.jpg",
-    kratakOpis: "Ovo je kratki opis busilice.",
-    cena: 10000,
-  };
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    setProducts(productsData);
+  }, []);
+
+  if (products.length === 0) return <p>Nema proizvoda.</p>;
 
   return (
-    <div>
-      <ProudctCard proizvod={proizvod} />
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>
+      {products.map((proizvod) => (
+        <ProudctCard key={proizvod.id} proizvod={proizvod} />
+      ))}
     </div>
   );
 }
