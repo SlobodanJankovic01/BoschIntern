@@ -1,8 +1,11 @@
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
 
-function ProudctCard(props) {
+function ProudctCard({ proizvod, viewMode }) {
   const [brProizvoda, setBrProizvoda] = useState(0);
+  const cardClass = `${styles.card} ${
+    viewMode === "list" ? styles.listView : ""
+  }`;
 
   function handlePlusClick() {
     setBrProizvoda((prevBr) => prevBr + 1);
@@ -13,11 +16,13 @@ function ProudctCard(props) {
   }
 
   return (
-    <div className={styles.card}>
-      <img src={props.proizvod.images[0]} alt="Slika proizvoda" />
-      <h2>{props.proizvod.name}</h2>
-      <p>{props.proizvod.shortDescription}</p>
-      <h3>{props.proizvod.price}</h3>
+    <div className={cardClass}>
+      <img src={proizvod.images[0]} alt="Slika proizvoda" />
+      <div className={styles.cardContent}>
+        <h2>{proizvod.name}</h2>
+        <p>{proizvod.shortDescription}</p>
+        <h3>{proizvod.price}</h3>
+      </div>
       <div className="buttons">
         <button>Add to cart</button>
         <button onClick={handleMinusClick}>-</button>

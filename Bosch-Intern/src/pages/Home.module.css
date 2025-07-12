@@ -1,0 +1,31 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 414px) {
+  .grid {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: 24px;
+  }
+}
