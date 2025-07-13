@@ -1,16 +1,11 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import ProudctCard from "../components/ProudctCard";
-import productsData from "../assets/products.json";
 import styles from "./Home.module.css";
+import { useProducts } from "../context/ProductContext";
 
 function Home() {
-  const [products, setProducts] = useState([]);
+  const products = useProducts();
   const [list, setList] = useState(false);
-
-  useEffect(() => {
-    setProducts(productsData);
-  }, []);
 
   function handleView() {
     setList((prev) => !prev);

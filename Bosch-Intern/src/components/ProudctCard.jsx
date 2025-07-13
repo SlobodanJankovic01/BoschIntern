@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
+import { Link } from "react-router-dom";
+import AddToCart from "./AddToCart";
 
 function ProudctCard({ proizvod, viewMode }) {
   const [brProizvoda, setBrProizvoda] = useState(0);
@@ -17,17 +19,20 @@ function ProudctCard({ proizvod, viewMode }) {
 
   return (
     <div className={cardClass}>
-      <img src={proizvod.images[0]} alt="Slika proizvoda" />
+      <Link to={`/product/${proizvod.id}`}>
+        <img src={proizvod.images[0]} alt="Slika proizvoda" />
+      </Link>
       <div className={styles.cardContent}>
         <h2>{proizvod.name}</h2>
         <p>{proizvod.shortDescription}</p>
         <h3>{proizvod.price}</h3>
       </div>
       <div className="buttons">
-        <button>Add to cart</button>
-        <button onClick={handleMinusClick}>-</button>
-        <span>{brProizvoda}</span>
-        <button onClick={handlePlusClick}>+</button>
+        <AddToCart
+          brProizvoda={brProizvoda}
+          minus={handleMinusClick}
+          plus={handlePlusClick}
+        />
       </div>
     </div>
   );
