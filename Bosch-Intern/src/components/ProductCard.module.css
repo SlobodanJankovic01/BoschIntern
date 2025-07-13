@@ -1,16 +1,17 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 16px;
   width: 100%;
   max-width: 250px;
-  text-align: center;
+  min-height: 450px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin: 10px auto;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 250px;
-  gap: 8px;
+  text-align: center;
+  background-color: #242424;
 }
 
 .card img {
@@ -20,44 +21,53 @@
   border-radius: 4px;
 }
 
-.card h2 {
-  min-height: 2.4em;
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 8px;
+}
+
+.cardContent h2 {
+  font-size: 1.1rem;
   margin: 0;
+  min-height: 2.4em;
 }
 
-.card p {
+.cardContent p {
+  font-size: 0.9rem;
+  margin-top: 25px;
   min-height: 3.6em;
-  margin: 0 0 12px 0;
 }
 
-.card h3 {
-  margin: 12px 0 0 0;
+.cardContent h3 {
+  margin-top: auto;
   color: #5aa104;
 }
 
-.buttons {
+.cardFooter {
+  margin-top: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: auto;
 }
 
-.buttons button {
+.cardFooter button {
   padding: 6px 12px;
-  border: none;
   background-color: #007bff;
+  margin: 7px;
+  border: none;
   color: white;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.buttons button:hover {
+.cardFooter button:hover {
   background-color: #0056b3;
 }
 
-.buttons span {
+.cardFooter span {
   font-weight: bold;
   min-width: 20px;
   text-align: center;
@@ -65,21 +75,18 @@
 
 .listView {
   flex-direction: row;
-  align-items: center;
-  text-align: left;
+  align-items: flex-start;
   max-width: 100%;
   width: 100%;
-  background-color: #1e1e1e;
+  background-color: #242424;
   padding: 12px;
   border-radius: 8px;
+  min-height: 200px;
 }
 
 .listView img {
   width: 150px;
   height: 150px;
-}
-
-.cardContent {
-  flex: 1;
-  padding-left: 16px;
+  object-fit: cover;
+  border-radius: 4px;
 }

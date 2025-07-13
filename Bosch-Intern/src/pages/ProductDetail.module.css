@@ -38,7 +38,7 @@
 }
 
 .rightSide h2 {
-  color: #e60000;
+  color: #ff0000b8;
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
@@ -47,4 +47,22 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.specTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.specTable th,
+.specTable td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.specTable th {
+  background-color: #ff0000b8;
+  font-weight: bold;
 }

@@ -19,15 +19,19 @@ function ProudctCard({ proizvod, viewMode }) {
 
   return (
     <div className={cardClass}>
-      <Link to={`/product/${proizvod.id}`}>
-        <img src={proizvod.images[0]} alt="Slika proizvoda" />
-      </Link>
+      <div className={styles.imageContainer}>
+        <Link to={`/product/${proizvod.id}`}>
+          <img src={proizvod.images[0]} alt="Slika proizvoda" />
+        </Link>
+      </div>
+
       <div className={styles.cardContent}>
         <h2>{proizvod.name}</h2>
         <p>{proizvod.shortDescription}</p>
-        <h3>{proizvod.price}</h3>
       </div>
-      <div className="buttons">
+
+      <div className={styles.cardFooter}>
+        <h3>{proizvod.price}</h3>
         <AddToCart
           brProizvoda={brProizvoda}
           minus={handleMinusClick}

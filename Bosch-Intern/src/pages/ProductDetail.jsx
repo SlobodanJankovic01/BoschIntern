@@ -27,15 +27,24 @@ function ProductDetail() {
         <h3>Opis</h3>
         <p>{proizvod.fullDescription}</p>
         <h3>Tehnicke specifikacije</h3>
-        <ul>
-          {Object.entries(proizvod.technicalSpecifications).map(
-            ([key, value]) => (
-              <li key={key}>
-                {key}: {value}
-              </li>
-            )
-          )}
-        </ul>
+        <table className={styles.specTable}>
+          <thead>
+            <tr>
+              <th>Karakteristika</th>
+              <th>Vrednost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(proizvod.technicalSpecifications).map(
+              ([key, value]) => (
+                <tr key={key}>
+                  <td>{key}</td>
+                  <td>{value}</td>
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
       </div>
       <div className={styles.rightSide}>
         <h1>{proizvod.name}</h1>
