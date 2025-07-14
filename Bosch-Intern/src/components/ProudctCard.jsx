@@ -6,7 +6,7 @@ import AddToCart from "./AddToCart";
 function ProudctCard({ proizvod, viewMode }) {
   const [brProizvoda, setBrProizvoda] = useState(0);
   const cardClass = `${styles.card} ${
-    viewMode === "list" ? styles.listView : ""
+    viewMode === "list" ? styles.listView : styles.gridCard
   }`;
 
   function handlePlusClick() {
@@ -21,6 +21,7 @@ function ProudctCard({ proizvod, viewMode }) {
     <div className={cardClass}>
       <div className={styles.imageContainer}>
         <Link to={`/product/${proizvod.id}`}>
+          {console.log("Putanja slike:", proizvod.images[0])}
           <img src={proizvod.images[0]} alt="Slika proizvoda" />
         </Link>
       </div>

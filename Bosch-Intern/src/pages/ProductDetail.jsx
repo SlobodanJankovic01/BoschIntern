@@ -23,7 +23,8 @@ function ProductDetail() {
   return (
     <div className={styles.productDetail}>
       <div className={styles.leftSide}>
-        <img src={proizvod.images[1]} alt="Slika proizvoda" />
+        {console.log("Putanja slike:", proizvod.images[1])}
+        <img src={`/${proizvod.images[0]}`} alt={proizvod.name} />
         <h3>Opis</h3>
         <p>{proizvod.fullDescription}</p>
         <h3>Tehnicke specifikacije</h3>

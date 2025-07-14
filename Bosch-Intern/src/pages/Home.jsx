@@ -48,12 +48,16 @@ function Home() {
         {filteredProducts.map((proizvod) => (
           <div
             key={proizvod.id}
-            style={{
-              flex: "1 1 250px",
-              maxWidth: "250px",
-              marginLeft: "15px",
-              marginRight: "15px",
-            }}
+            style={
+              list
+                ? { width: "100%" }
+                : {
+                    flex: "1 1 250px",
+                    maxWidth: "250px",
+                    marginLeft: "15px",
+                    marginRight: "15px",
+                  }
+            }
           >
             <ProudctCard
               key={proizvod.id}
