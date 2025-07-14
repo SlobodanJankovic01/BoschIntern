@@ -1,0 +1,31 @@
+.cartContainer {
+  padding: 30px;
+}
+
+.empty {
+  padding: 30px;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+}
+
+.cartItem {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cartItem input {
+  margin-left: 10px;
+  width: 60px;
+}
+
+.total {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}

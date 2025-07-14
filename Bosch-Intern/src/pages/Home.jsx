@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import ProudctCard from "../components/ProudctCard";
 import styles from "./Home.module.css";
 import { useProducts } from "../context/ProductContext";
+import HomeHeader from "../components/HomeHeader";
+import HomeFooter from "../components/HomeFooter";
 
 function Home() {
   const products = useProducts();
@@ -52,41 +54,17 @@ function Home() {
 
   return (
     <>
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Pretraži proizvode..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        {search && (
-          <button onClick={() => setSearch("")}>Obriši pretragu</button>
-        )}
-        <p>Pronađeno: {filteredProducts.length} proizvoda</p>
-        <button onClick={handleView}>
-          {list ? "Mrezni prikaz" : "Prikaz liste"}
-        </button>
-      </div>
-
-      <div>
-        <select onChange={(e) => setSort(e.target.value)} value={sort}>
-          <option value="">Sortiraj</option>
-          <option value="priceASC">Cena (rastuce)</option>
-          <option value="priceDSC">Cena (opadajuce)</option>
-          <option value="nameAZ">Naziv (A-Z)</option>
-          <option value="nameZA">Naziv (Z-A)</option>
-        </select>
-
-        <select
-          onChange={(e) => setItemsPerPage(parseInt(e.target.value))}
-          value={itemsPerPage}
-        >
-          <option value={5}>5 po strani</option>
-          <option value={10}>10 po strani</option>
-          <option value={15}>15 po strani</option>
-          <option value={20}>20 po strani</option>
-        </select>
-      </div>
+      <HomeHeader
+        search={search}
+        setSearch={setSearch}
+        sort={sort}
+        setSort={setSort}
+        itemsPerPage={itemsPerPage}
+        setItemsPerPage={setItemsPerPage}
+        handleView={handleView}
+        list={list}
+        filteredCount={filteredProducts.length}
+      />
 
       <div className={list ? styles.list : styles.grid}>
         {paginatedProducts.map((proizvod) => (
@@ -111,21 +89,12 @@ function Home() {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: "20px" }}>
-        <button
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage((p) => p - 1)}
-        >
-          Prethodna
-        </button>
-        <span style={{ margin: "0 10px" }}>Strana {currentPage}</span>
-        <button
-          disabled={currentPage * itemsPerPage >= sortedProducts.length}
-          onClick={() => setCurrentPage((p) => p + 1)}
-        >
-          Sledeća
-        </button>
-      </div>
+      <HomeFooter
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalItems={sortedProducts.length}
+        itemsPerPage={itemsPerPage}
+      />
     </>
   );
 }

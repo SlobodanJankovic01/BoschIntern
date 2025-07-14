@@ -37,6 +37,7 @@ function ProudctCard({ proizvod, viewMode }) {
           brProizvoda={brProizvoda}
           minus={handleMinusClick}
           plus={handlePlusClick}
+          proizvod={proizvod}
         />
       </div>
     </div>
