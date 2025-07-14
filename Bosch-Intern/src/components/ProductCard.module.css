@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #ddd;
+  border: 1px solid #ff000066;
   border-radius: 6px;
   padding: 16px;
   width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px #ff000066;
   margin: 10px auto;
   text-align: center;
-  background-color: #242424;
+  background-color: #1e1e1e;
 }
 
 .gridCard {
@@ -43,11 +43,6 @@
   min-height: 3.6em;
 }
 
-.cardContent h3 {
-  margin-top: auto;
-  color: #5aa104;
-}
-
 .cardFooter {
   margin-top: 16px;
   display: flex;
@@ -58,7 +53,7 @@
 
 .cardFooter button {
   padding: 6px 12px;
-  background-color: #007bff;
+  background-color: #ff0000b8;
   margin: 7px;
   border: none;
   color: white;
@@ -67,7 +62,7 @@
 }
 
 .cardFooter button:hover {
-  background-color: #0056b3;
+  border-color: #646cff;
 }
 
 .cardFooter span {
@@ -80,7 +75,7 @@
   flex-direction: row;
   align-items: stretch;
   width: 100%;
-  background-color: #242424;
+  background-color: #1e1e1e;
   padding: 12px;
   border-radius: 8px;
   min-height: 180px;
