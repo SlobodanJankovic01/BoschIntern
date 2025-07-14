@@ -32,7 +32,7 @@ function ProudctCard({ proizvod, viewMode }) {
       </div>
 
       <div className={styles.cardFooter}>
-        <h3>{proizvod.price}</h3>
+        <h3>Cena: {proizvod.price}</h3>
         <AddToCart
           brProizvoda={brProizvoda}
           minus={handleMinusClick}

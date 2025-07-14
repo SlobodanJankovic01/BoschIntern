@@ -4,6 +4,7 @@ import { useProducts } from "../context/ProductContext";
 import { useState } from "react";
 import styles from "./ProductDetail.module.css";
 import BackButton from "../components/BackButton";
+import ErrorComponent from "../components/ErrorComponent";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ function ProductDetail() {
 
   const proizvod = products.find((p) => String(p.id) === id);
 
-  if (!proizvod) return <p>Proizvod nije pronađen.</p>;
+  if (!proizvod) return <ErrorComponent />;
 
   function handlePlusClick() {
     setBrProizvoda((prevBr) => prevBr + 1);

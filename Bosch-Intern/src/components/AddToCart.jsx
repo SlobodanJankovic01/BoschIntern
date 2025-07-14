@@ -9,10 +9,19 @@ function AddToCart(props) {
   };
 
   return (
-    <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-      <button onClick={props.minus}>-</button>
-      <span>{props.brProizvoda}</span>
-      <button onClick={props.plus}>+</button>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "8px",
+        alignItems: "center",
+      }}
+    >
+      <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+        <button onClick={props.minus}>-</button>
+        <span>{props.brProizvoda}</span>
+        <button onClick={props.plus}>+</button>
+      </div>
       <Link to="/cart">
         <button disabled={props.brProizvoda === 0} onClick={handleAdd}>
           Add
