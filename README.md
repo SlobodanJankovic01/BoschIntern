@@ -23,22 +23,25 @@ Jednostavna e-commerce React aplikacija razvijena kao test zadatak za praksu. Om
 3.Pokreni
   npm run dev
 
-Struktura projekta:
-components/ – sadrži sve funkcionalne komponente (npr. AddToCart, HomeHeader, ProductCard...)
-pages/ – stranice aplikacije: Home, Cart, ProductDetail
-context/ – globalni state za proizvode i korpu
+## Struktura projekta
 
-Funkcionalnosti:
--Prikaz proizvoda u listi i mreži
--Pretraga proizvoda po nazivu
--Sortiranje po ceni
--Paginacija
--Dodavanje proizvoda u korpu
--Prikaz korpe i detalja proizvoda
+- components/ – sadrži sve funkcionalne komponente (npr. AddToCart, HomeHeader, ProductCard...)
+- pages/ – stranice aplikacije: Home, Cart, ProductDetail
+- context/ – globalni state za proizvode i korpu
 
-Napomena:
--Na stranici ProductDetail trenutno nedostaje galerija za prikaz više slika proizvoda.
--Vizuelni izgled aplikacije nije u potpunosti zadovoljavajući – planirano je dodatno stilizovanje i unapređenje UI/UX dizajna.
+## Funkcionalnosti
+
+- Prikaz proizvoda u listi i mreži
+- Pretraga proizvoda po nazivu
+- Sortiranje po ceni
+- Paginacija
+- Dodavanje proizvoda u korpu
+- Prikaz korpe
+
+## Napomena
+
+- Na stranici ProductDetail trenutno nedostaje galerija za prikaz više slika proizvoda.
+- Vizuelni izgled aplikacije nije u potpunosti zadovoljavajući – planirano je dodatno stilizovanje i unapređenje UI/UX dizajna.
 
 Autor
 Slobodan Janković
