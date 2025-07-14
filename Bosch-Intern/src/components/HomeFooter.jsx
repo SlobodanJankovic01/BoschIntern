@@ -9,9 +9,7 @@ function HomeFooter({ currentPage, setCurrentPage, totalItems, itemsPerPage }) {
       >
         Prethodna
       </button>
-      <span style={{ margin: "0 10px" }}>
-        Strana {currentPage} od {max}
-      </span>
+      <span style={{ margin: "0 10px" }}>{currentPage}</span>
       <button
         disabled={currentPage >= max}
         onClick={() => setCurrentPage((p) => p + 1)}

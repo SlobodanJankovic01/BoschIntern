@@ -1,5 +1,6 @@
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import styles from "./HomeHeader.module.css";
 
 function HomeHeader({
   search,
@@ -15,15 +16,8 @@ function HomeHeader({
   const { totalItems } = useCart();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        marginBottom: "20px",
-      }}
-    >
-      <div className="search-bar">
+    <div className={styles.filter}>
+      <div className={styles.top}>
         <input
           type="text"
           placeholder="Pretraži proizvode..."
@@ -37,7 +31,7 @@ function HomeHeader({
         </button>
       </div>
 
-      <div>
+      <div className={styles.bottom}>
         <select onChange={(e) => setSort(e.target.value)} value={sort}>
           <option value="">Sortiraj</option>
           <option value="priceASC">Cena (rastuce)</option>

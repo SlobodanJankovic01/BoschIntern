@@ -1,18 +1,27 @@
 import { useCart } from "../context/CartContext";
 import styles from "./Cart.module.css";
+import BackButton from "../components/BackButton";
 
 function Cart() {
   const { cartItems, totalPrice, updateQuantity, removeFromCart } = useCart();
 
-  if (cartItems.length === 0) return <p>Korpa je prazna.</p>;
+  if (cartItems.length === 0)
+    return (
+      <>
+        <BackButton />
+        <p>Korpa je prazna.</p>
+      </>
+    );
 
   return (
     <div className={styles.cartContainer}>
+      <BackButton />
+
       <h2>Korpa</h2>
       <ul className={styles.cartList}>
         {cartItems.map((item) => (
           <li key={item.id} className={styles.cartItem}>
-            <h3>{item.name}</h3>
+            <h3>Naziv proizvoda: {item.name}</h3>
             <p>Cena: {item.price.toFixed(2)} RSD</p>
             <p>
               Količina:

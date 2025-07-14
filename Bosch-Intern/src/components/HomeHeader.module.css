@@ -1,0 +1,38 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 0 12px;
+}
+
+.top,
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.top input {
+  flex: 1 1 150px;
+  min-width: 140px;
+  padding: 6px;
+}
+
+.top button,
+.bottom button,
+.bottom select {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ff0000b8;
+  color: white;
+  cursor: pointer;
+}
+
+.top p {
+  margin: 0;
+}

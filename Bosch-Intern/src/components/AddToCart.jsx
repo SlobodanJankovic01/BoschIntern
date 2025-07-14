@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 function AddToCart(props) {
@@ -12,7 +13,11 @@ function AddToCart(props) {
       <button onClick={props.minus}>-</button>
       <span>{props.brProizvoda}</span>
       <button onClick={props.plus}>+</button>
-      <button onClick={handleAdd}>Add</button>
+      <Link to="/cart">
+        <button disabled={props.brProizvoda === 0} onClick={handleAdd}>
+          Add
+        </button>
+      </Link>
     </div>
   );
 }

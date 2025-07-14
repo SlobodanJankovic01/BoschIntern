@@ -1,8 +1,9 @@
 import AddToCart from "../components/AddToCart";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useProducts } from "../context/ProductContext";
 import { useState } from "react";
 import styles from "./ProductDetail.module.css";
+import BackButton from "../components/BackButton";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -22,6 +23,7 @@ function ProductDetail() {
   }
   return (
     <div className={styles.productDetail}>
+      <BackButton />
       <div className={styles.leftSide}>
         {console.log("Putanja slike:", proizvod.images[1])}
         <img src={`/${proizvod.images[0]}`} alt={proizvod.name} />
@@ -55,6 +57,7 @@ function ProductDetail() {
             brProizvoda={brProizvoda}
             minus={handleMinusClick}
             plus={handlePlusClick}
+            proizvod={proizvod}
           />
         </div>
       </div>
