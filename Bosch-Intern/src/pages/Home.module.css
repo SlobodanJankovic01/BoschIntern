@@ -1,0 +1,29 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 10px;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  height: auto;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .search-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .search-bar input {
+    max-width: 400px;
+  }
+}
